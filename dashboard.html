@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Controle Financeiro</title>
+
+  <link rel="stylesheet" href="dashboard.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>💰 Controle Financeiro</h1>
+
+  <div class="top-menu">
+
+    <select id="menu">
+      <option value="dashboard">Dashboard</option>
+      <option value="add">Adicionar Transação</option>
+      <option value="view">Ver Transações</option>
+    </select>
+
+    <select id="tema">
+      <option value="claro">Claro</option>
+      <option value="escuro">Escuro</option>
+    </select>
+
+  </div>
+
+  <!-- ADD -->
+  <div id="addScreen" class="screen">
+
+    <h2>Adicionar Transação</h2>
+
+    <select id="tipo">
+      <option>Receita</option>
+      <option>Despesa</option>
+    </select>
+
+    <select id="categoria">
+      <option>Salário</option>
+      <option>Alimentação</option>
+      <option>Transporte</option>
+      <option>Lazer</option>
+      <option>Outros</option>
+    </select>
+
+    <input type="number" id="valor" placeholder="Valor">
+
+    <input type="text" id="descricao" placeholder="Descrição">
+
+    <button onclick="salvarTransacao()">
+      Salvar
+    </button>
+
+  </div>
+
+  <!-- DASHBOARD -->
+  <div id="dashboardScreen" class="screen">
+
+    <div class="cards">
+
+      <div class="cardInfo">
+        <h3>Receitas</h3>
+        <p id="receitas">R$ 0</p>
+      </div>
+
+      <div class="cardInfo">
+        <h3>Despesas</h3>
+        <p id="despesas">R$ 0</p>
+      </div>
+
+      <div class="cardInfo">
+        <h3>Saldo</h3>
+        <p id="saldo">R$ 0</p>
+      </div>
+
+    </div>
+
+    <canvas id="grafico"></canvas>
+
+  </div>
+
+  <!-- TABELA -->
+  <div id="viewScreen" class="screen">
+
+    <table>
+
+      <thead>
+        <tr>
+          <th>Tipo</th>
+          <th>Categoria</th>
+          <th>Valor</th>
+          <th>Descrição</th>
+        </tr>
+      </thead>
+
+      <tbody id="tabelaBody"></tbody>
+
+    </table>
+
+  </div>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
