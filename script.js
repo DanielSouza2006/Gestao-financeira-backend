@@ -26,7 +26,7 @@ function fazerLogin() {
 
     const dados = { "email": user, "senha": pass };
 
-    fetch('http://localhost:5000/login', {
+    fetch('https://gestao-financeira-backend-hhqs.onrender.com/login', {
 
         method: 'POST',
         headers: { 
